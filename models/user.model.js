@@ -5,26 +5,26 @@ const mongoose = require('mongoose')
 const userschema = mongoose.Schema({
 
     name :{
-        type : string,
+        type : String,
         required : true
     },
     userId :{
-        type : string,
+        type : String,
         required : true,
         unique : true
     },
     password :{
-        type : string,
+        type : String,
         required : true
     },
     email :{
-        type : string,
+        type : String,
         required : true,
         minlength : 10,
         unique : true
     },
     userType : {
-        type : string,
+        type : String,
         required : true,
         enum : ["CUSTOMER","ADMIN"]
     }
