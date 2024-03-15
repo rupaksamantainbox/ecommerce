@@ -52,6 +52,7 @@ app.use(express.json())
 
 //stich the route 
 require('./routes/auth.route')(app)
+require('./routes/category.route')(app)
 
 //server start
 app.listen(server_config.PORT,()=>{

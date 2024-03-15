@@ -5,6 +5,6 @@ const authMiddleware = require('../middlewares/auth_mw')
 module.exports = (app) =>{
     app.post("/ecomm/api/v1/auth/signup",[authMiddleware.verifySignupbody],authController.signup)
 
-    app.post("/ecomm/api/v1/auth/signin",[],authController.signin)
+    app.post("/ecomm/api/v1/auth/signin",[authMiddleware.verifySigninbody],authController.signin)
 }
 
