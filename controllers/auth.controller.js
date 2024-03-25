@@ -24,10 +24,7 @@ exports.signup = async (req, res)=>{
     try{
 
         const user_created = await user_model.create(userObj)
-        /**
-         * Return this user
-         */
-
+       
         const res_obj = {
             name : user_created.name,
             userId : user_created.userId,
@@ -70,7 +67,7 @@ exports.signin = async (req, res)=>{
 
    // using jwt we will create the acces token with a given TTL and return
    const token = jwt.sign({id : user.userId}, secret.secret,{
-    expiresIn : 120 
+    expiresIn : 900 
    })
 
    res.status(200).send({

@@ -18,34 +18,34 @@ db.once("open", ()=>{
     //init()
 })
 //check user exist
-async function init(){
-    //reading data
-    try{
-        let user = await user_model.findOne({userId : 'admin'})
-        if(user){
-            console.log("User already Exist")
-            return
-        }
-        //console.log("User data",user)
-    }catch(error){
-        console.log("Error while reading admin User",error)
-    }
+// async function init(){
+//     //reading data
+//     try{
+//         let user = await user_model.findOne({userId : 'admin'})
+//         if(user){
+//             console.log("User already Exist")
+//             return
+//         }
+//         //console.log("User data",user)
+//     }catch(error){
+//         console.log("Error while reading admin User",error)
+//     }
     
-    //user create
-    try{
-        user = await user_model.create({
-            name : "Rupak",
-            userId : "admin",
-            email : "rupaksamanta@gmail.com",
-            userType : "ADMIN",
-            password : bcrypt.hashSync("12345",8)
-        })
-        console.log("admin Created",user)
+//     //user create
+//     try{
+//         user = await user_model.create({
+//             name : "Rupak",
+//             userId : "admin",
+//             email : "rupaksamanta@gmail.com",
+//             userType : "ADMIN",
+//             password : bcrypt.hashSync("12345",8)
+//         })
+//         console.log("admin Created",user)
 
-    }catch(error){
-        console.log("Error while creating admin User",error)
-    }
-}
+//     }catch(error){
+//         console.log("Error while creating admin User",error)
+//     }
+// }
 
 const app = express()
 app.use(express.json())
